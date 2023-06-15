@@ -15,6 +15,6 @@ jobs:
           
       - name: get chrome version
         run: |
-          which chrome
+          echo "chrome bin is $(which chrome)"
           chrome --version
       

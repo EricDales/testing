@@ -18,3 +18,11 @@ jobs:
           echo "chrome bin is $(which chrome)"
           chrome --version
       
+      - name: let's do it manually
+        run: |
+          curl -X GET https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb -o google-chrome-beta_current_amd64.deb
+          ls -al 
+          /usr/bin/ar x google-chrome-beta_current_amd64.deb
+          ls -al
+          /usr/bin/tar -xf data.tar.xz --directory chrome-dir --strip-components 4 ./opt/google
+          ls -al

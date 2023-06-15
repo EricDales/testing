@@ -1,0 +1,20 @@
+name: Test browser-actions/setup-chrome action
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  setup-chrome:
+    runs-on: "ubuntu-latest"
+    
+    steps:
+      - name: setup-chrome basic test
+        uses: browser-actions/setup-chrome@v1
+        with: 
+          chrome-version: beta
+          
+      - name: get chrome version
+        run: |
+          which chrome
+          chrome --version
+      
